@@ -18,6 +18,9 @@ async def root():
         "usage": "POST /upload-csv with a CSV file to get statistics"
     }
 
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
 
 @app.post("/upload-csv")
 async def upload_csv(file: UploadFile = File(...)) -> Dict[str, Any]:
