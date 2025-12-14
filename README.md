@@ -37,6 +37,13 @@ Returns API information.
 curl http://localhost:8000/
 ```
 
+#### GET `/health`
+Check system health status.
+
+```bash
+curl http://localhost:8000/health
+```
+
 #### POST `/upload-csv`
 Upload a CSV file and get statistics for numeric columns.
 
@@ -101,7 +108,6 @@ Response:
 FastAPI automatically generates interactive API documentation:
 
 - Swagger UI: `http://localhost:8000/docs`
-- ReDoc: `http://localhost:8000/redoc`
 
 ## Running Tests
 
@@ -136,3 +142,6 @@ The following features are explicitly out of scope:
 - **Uvicorn**: ASGI server
 - **Pytest**: Testing framework
 
+## Code style and formatting
+
+- **Black**: Python Code formatter
