@@ -31,7 +31,7 @@ async def upload_csv(file: UploadFile = File(...)) -> Dict[str, Any]:
         JSON object containing statistics for each numeric column
     """
     # Validate file extension
-    if not file.filename.endswith('.csv'):
+    if not file.filename or not file.filename.endswith('.csv'):
         raise HTTPException(status_code=400, detail="File must be a CSV file")
     
     try:
